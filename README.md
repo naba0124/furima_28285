@@ -8,12 +8,11 @@
 | email                     | string | null: false |
 | password                  | string | null: false |
 | passwoed_confirmation     | string | null: false |
-| user_id                   | intger | null: false |
 | bithday                   | date | null: false |
-| firstname                 | integer | null: false |
-| lastname                | integer | null: false |
-| firstname_kana            | integer | null: false |
-| lastname_kana                   | integer | null: false |
+| firstname                 | string | null: false |
+| lastname                | string | null: false |
+| firstname_kana            | string | null: false |
+| lastname_kana                   | string | null: false |
 
 ### Association
 
@@ -59,9 +58,10 @@
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-| card_number | string | null: false                    |
-| expirnation_date    | date | null: false |
-| security_code    | integer | null: false |
+|         |            |                                |
+|         |            |                                |
+
+
 
 ### Association
 
@@ -73,12 +73,21 @@
 
 | Column  | Type       | Options    |
 | ------- | ---------- | ---------- |
-| post_number | integer     | null: false       |
-| city    | integer | null: false|
-| city_2    | string | null: false |
-| city_number         | string | null: false |
-| build_name                     | string | null: false |
+| post_number | string     | null: false       |
+| prefectures    | integer | null: false|
+| city    | string | null: false |
+| address         | string | null: false |
+| build_name                     | string |          |
 | tel                  | string | null: false |
 
 ### belongs_to :sales
 
+## transaction テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| user_id |            |  null:false                    |
+| item_id |            |  null:false                    |
+
+
+### Association

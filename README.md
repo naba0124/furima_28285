@@ -4,7 +4,7 @@
 
 | Column                    | Type   | Options     |
 | --------                  | ------ | ----------- |
-| nickname                  | integer | null: false |
+| nickname                  | string | null: false |
 | email                     | string | null: false |
 | password                  | string | null: false |
 | passwoed_confirmation     | string | null: false |
@@ -18,7 +18,7 @@
 
 - has_many :comments
 - has_many :items
-- has_one :sales
+- has_one :transaction
 
 ## comments テーブル
 
@@ -37,9 +37,9 @@
 | Column | Type       | Options                    |
 | ------ | ---------- | -------------------------- |
 | name   | integer    |   null: false              |
-| image  | text | null: false, foreign_key: true   |
-| categoly| integer | null: false, foreign_key: true |
-| price  | integer | null: false, foreign_key: true |
+| image  | text       | null: false                |
+| categoly| integer   | null: false                |
+| price  | integer    | null: false                |
 | user_id| integer | null: false, foreign_key: true |
 | text   | text        | null: false               |
 | stetus | intger      | null: false               |
@@ -51,7 +51,7 @@
 
 - has_many :comments
 - belongs_to :users
-- has_one :sale
+- has_one :transaction
 
 
 
@@ -68,8 +68,9 @@
 | prefectures| integer | null: false|
 | city    | string     | null: false |
 | address | string     | null: false |
-| build_name  | string |             |
+| build_name| string   |             |
 | tel     | string     | null: false |
+| user_id | integer    | foreign_key: true|
 
 ### belongs_to :sales
 
@@ -77,8 +78,8 @@
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-| user_id |            |  null:false                    |
-| item_id |            |  null:false                    |
+| user_id | integer    |  null:false                    |
+| item_id | integer    |  null:false                    |
 
 
 ### Association

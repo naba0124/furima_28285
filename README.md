@@ -8,11 +8,11 @@
 | email                     | string | null: false |
 | password                  | string | null: false |
 | passwoed_confirmation     | string | null: false |
-| bithday                   | date | null: false |
+| bithday                   | date   | null: false |
 | firstname                 | string | null: false |
-| lastname                | string | null: false |
+| lastname                  | string | null: false |
 | firstname_kana            | string | null: false |
-| lastname_kana                   | string | null: false |
+| lastname_kana             | string | null: false |
 
 ### Association
 
@@ -24,8 +24,8 @@
 
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
-| user_id   | integer | null: false |
-| comments | text | null:false |
+| user_id| integer| null: false |
+| comments| text  | null: false |
 
 ### Association
 
@@ -40,7 +40,7 @@
 | image  | text       | null: false                |
 | categoly| integer   | null: false                |
 | price  | integer    | null: false                |
-| user_id| integer | null: false, foreign_key: true |
+| user_id| integer    | null: false, foreign_key: true |
 | text   | text        | null: false               |
 | stetus | intger      | null: false               |
 | addres_origin| integer | null: false             |

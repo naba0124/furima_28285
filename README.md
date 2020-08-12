@@ -36,30 +36,22 @@
 
 | Column | Type       | Options                    |
 | ------ | ---------- | -------------------------- |
-| name   | integer | null: false |
-| image   | text | null: false |
-| categoly                  | integer | null: false |
-| price                     | integer | null: false |
-| user_id                 | integer | null: false |
-| text                    | text | null: false |
-| stetus                  | intger | null: false |
-| addres_origin                  | integer | null: false |
-| burden                     | integer | null: false |
-| delivery_time                 | integer | null: false |
+| name   | integer    |   null: false              |
+| image  | text | null: false, foreign_key: true   |
+| categoly| integer | null: false, foreign_key: true |
+| price  | integer | null: false, foreign_key: true |
+| user_id| integer | null: false, foreign_key: true |
+| text   | text        | null: false               |
+| stetus | intger      | null: false               |
+| addres_origin| integer | null: false             |
+| burden | integer     | null: false               |
+| delivery_time| integer | null: false             |
 
 ### Association
 
 - has_many :comments
 - belongs_to :users
 - has_one :sale
-
-
-## sales テーブル
-
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-|         |            |                                |
-|         |            |                                |
 
 
 
@@ -72,12 +64,12 @@
 
 | Column  | Type       | Options    |
 | ------- | ---------- | ---------- |
-| post_number | string     | null: false       |
-| prefectures    | integer | null: false|
-| city    | string | null: false |
-| address         | string | null: false |
-| build_name                     | string |          |
-| tel                  | string | null: false |
+| post_number | string | null: false|
+| prefectures| integer | null: false|
+| city    | string     | null: false |
+| address | string     | null: false |
+| build_name  | string |             |
+| tel     | string     | null: false |
 
 ### belongs_to :sales
 

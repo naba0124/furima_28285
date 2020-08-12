@@ -18,7 +18,7 @@
 
 - has_many :comments
 - has_many :items
-- has_one :transaction
+- has_one :transactions
 
 ## comments テーブル
 
@@ -55,10 +55,7 @@
 
 
 
-### Association
 
-- belongs_to :users
-- belongs_to :items
 
 ## address テーブル
 
@@ -75,14 +72,14 @@
 ### Association
 - belongs_to :transaction
 
-## transaction テーブル
+## transactions テーブル
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
 | user_id | integer    |  null:false, foreign_key:true  |
 | item_id | integer    |  null:false, foreign_key:true  |
 
-
-
 ### Association
 - has_one :address
+- belongs_to :users
+- belongs_to :items

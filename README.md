@@ -69,20 +69,20 @@
 | city    | string     | null: false |
 | address | string     | null: false |
 | build_name| string   |             |
+| user_id | integer    | foreign_key: true |
 | tel     | string     | null: false |
-| user_id | integer    | foreign_key: true|
 
-### belongs_to :sales
+### Association
+- belongs_to :transaction
 
 ## transaction テーブル
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-| user_id | integer    |  null:false                    |
-| item_id | integer    |  null:false                    |
+| user_id | integer    |  null:false, foreign_key:true  |
+| item_id | integer    |  null:false, foreign_key:true  |
+| address | string     |  null:false, foreign_key:true  |
 
 
 ### Association
-
-- belongs_to :sales
 - has_one :address

@@ -6,7 +6,6 @@ class User < ApplicationRecord
 
   validates :nickname, :email, :password, :password_confirmation, :birthday, :firstname, :lastname, :firstname_kana, :lastname_kana, presence: true
   validates :email, uniqueness: true # アドレスが重複してはいけない
-  validates :email, inclusion: { in: @ }
   validates :password, confirmation: true #確認用パスワードと値が一致しなくてはならない
   validates :password, length: { minimum: 6 }#６文字以上でないと保存できない
   validates :password, format: { with: /\A[a-z0-9]+\z/i } # 半角英数字のみ

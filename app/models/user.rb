@@ -10,6 +10,7 @@ class User < ApplicationRecord
     validates :password, format: { with: /\A[a-z0-9]+\z/i } # 半角英数字のみ
     validates :firstname, :lastname, format: { with: /\A[ぁ-んァ-ン一-龥]/ } # 全角ひらがなカタカナ漢字のみ
     validates :firstname_kana, :lastname_kana, format: { with: /\A[ァ-ヶー－]+\z/ } # 全角カタカナのみ
+    validates :firstname, :lastname, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
   end
   
   

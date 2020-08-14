@@ -117,17 +117,17 @@ describe User do
       end
       it "メールアドレスは@を含む必要があること" do
         user = FactoryBot.build(:user)
-        user.email = "kkk@gmail.com"
+        user.email = "kkkgmail.com"
         user.valid?
       end
       it "firstnameが全角でないと登録できない" do
         user = FactoryBot.build(:user)
-        user.firstname = "田中"
+        user.firstname = "tanaka"
         user.valid?
       end
       it "lastnameが全角でないと登録できない" do
         user = FactoryBot.build(:user)
-        user.lastname = "田中"
+        user.lastname = "tanaka"
         user.valid?
       end
     end

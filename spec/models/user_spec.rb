@@ -119,16 +119,19 @@ describe User do
         user = FactoryBot.build(:user)
         user.email = "kkkgmail.com"
         user.valid?
+        expect(user.errors.full_messages).to include"Email is invalid"
       end
       it "firstnameが全角でないと登録できない" do
         user = FactoryBot.build(:user)
         user.firstname = "tanaka"
         user.valid?
+        expect(user.errors.full_messages).to include("Firstname is invalid")
       end
       it "lastnameが全角でないと登録できない" do
         user = FactoryBot.build(:user)
         user.lastname = "tanaka"
         user.valid?
+        expect(user.errors.full_messages).to include("Lastname is invalid")
       end
     end
 

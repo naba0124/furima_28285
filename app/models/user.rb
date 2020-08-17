@@ -1,6 +1,5 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  has_many :items
 
   hankaku = /\A[a-z0-9]+\z/i
   zenkaku = /\A[ぁ-んァ-ン一-龥]/

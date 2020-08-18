@@ -7,7 +7,7 @@ describe User do
       @item_image = Faker::Lorem.sentence
     end
     context '出品ページへ遷移できるとき' do
-      it "ログインしたユーザーは出品できる" do
+      it 'ログインしたユーザーは出品できる' do
         visit new_user_session_path
         fill_in 'user[email]', with: @user.email
         fill_in 'user[password]', with: @user.password

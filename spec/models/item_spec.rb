@@ -20,6 +20,18 @@ RSpec.describe Item, type: :model do
       end
     end
     context '商品出品がうまくいかない時' do
+      it 'priceが300以下なら出品できない' do
+        item = FactoryBot.build(:item)
+        @item.price = '299'
+        item.valid?
+        expect(item.errors.full_messages).to include("Image can't be blank")
+      end
+      it 'priceが9999999以上なら出品できない' do
+        item = FactoryBot.build(:item)
+        @item.price = '10000000'
+        item.valid?
+        expect(item.errors.full_messages).to include("Image can't be blank")
+      end
       it 'nameが空では登録できない' do
         item = FactoryBot.build(:item)
         item.name = ''

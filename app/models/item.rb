@@ -10,6 +10,7 @@ class Item < ApplicationRecord
 
   validates :name, :image, :genre_id, :price, :text, :status_id, :address_origin_id, :burden_id, presence: true
   validates :status_id, :genre_id, :address_origin_id, :burden_id, numericality: { other_than: 1 } 
-
+  validates :price, :numericality => { :greater_than => 299 }
+  validates :price, :numericality => { :less_than_or_equal_to => 9999999 }
 end
 

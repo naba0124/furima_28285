@@ -6,6 +6,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :address_origin
   belongs_to_active_hash :burden
   belongs_to :user
+  has_one :item_order
   has_one_attached :image
 
   with_options presence: true do

@@ -43,7 +43,7 @@
 | user_id| integer    | null: false, foreign_key: true |
 | text   | text        | null: false               |
 | stetus | intger      | null: false               |
-| addres_origin| integer | null: false             |
+| address_origin| integer | null: false             |
 | burden | integer     | null: false               |
 | delivery_time| integer | null: false             |
 

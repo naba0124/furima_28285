@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "items#index"
-  resources :items
-  resources :items, only: :order do
-    post 'order', on: :member
+  resources :items do
+    resources :transactions
+    # member do
+    #   post 'transaction'
+    # end
   end
 end

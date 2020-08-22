@@ -41,9 +41,7 @@ class ItemsController < ApplicationController
   def show
   end
 
-  def order
-    ItemOrder.create(item_id: params[:id])
-  end
+  
 
 
   private

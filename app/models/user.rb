@@ -1,9 +1,11 @@
 class User < ApplicationRecord
   has_many :items
+  has_one :address
 
   hankaku = /\A[a-z0-9]+\z/i
   zenkaku = /\A[ぁ-んァ-ン一-龥]/
   zenkaku_kana = /\A[ァ-ヶー－]+\z/
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :nickname, :email, :password_confirmation, :birthday, :firstname, :lastname, presence: true

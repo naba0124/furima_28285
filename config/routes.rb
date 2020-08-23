@@ -3,8 +3,5 @@ Rails.application.routes.draw do
   root to: "items#index"
   resources :items do
     resources :transactions
-    # member do
-    #   post 'transaction'
-    # end
   end
 end

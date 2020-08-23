@@ -5,7 +5,7 @@ RSpec.describe Address, type: :model do
     before do
       @address = FactoryBot.build(:address)
     end
-    context '出品情報の保存ができる場合' do
+    context '購入情報の保存ができる場合' do
       it 'post_number,address_origin_id,city,address,telがあれば保存される' do
         expect(@address).to be_valid
       end
@@ -17,8 +17,9 @@ RSpec.describe Address, type: :model do
         @address.tel = "09012345678"
         expect(@address).to be_valid
       end
+    end
 
-      context '商品出品がうまくいかない時' do
+      context '商品購入がうまくいかない時' do
         it 'post_numberが空では登録できない' do
           address = FactoryBot.build(:address)
           address.post_number = ''
@@ -62,6 +63,5 @@ RSpec.describe Address, type: :model do
           expect(address.errors.full_messages).to include("Post number is invalid")
         end
       end
-    end
   end
 end

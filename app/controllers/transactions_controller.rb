@@ -32,7 +32,7 @@ class TransactionsController < ApplicationController
   end
 
   def address_params
-    params.permit(:post_number, :address_origin_id, :city, :address, :build_number, :tel).merge(user_id: current_user.id)
+    params.permit(:post_number, :address_origin_id, :city, :address, :build_number, :tel, :item_id).merge(user_id: current_user.id)
   end
 
   def move_to_index

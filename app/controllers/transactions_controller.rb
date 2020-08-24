@@ -10,16 +10,15 @@ class TransactionsController < ApplicationController
   end
 
   def new
-    @transaction = Transaction.new
-    @address = Address.new
+    @transaction = TransactionAddress.new
   end
 
   def create
-    @transaction = Transaction.new
-    @address = Address.create(address_params)
+    @transaction = TransactionAddress.new(address_params)
     if @transaction.valid?
       pay_item
       ItemOrder.create(item_id: params[:item_id])
+      @transaction.save
       return redirect_to root_path
     else
       render 'index'

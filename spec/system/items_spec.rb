@@ -4,7 +4,7 @@ describe User do
     before do
       @user = FactoryBot.create(:user)
       @item_text = Faker::Lorem.sentence
-      @item_image = Faker::Lorem.sentence
+      @item_images = Faker::Lorem.sentence
     end
     context '出品ページへ遷移できるとき' do
       it 'ログインしたユーザーは出品できる' do

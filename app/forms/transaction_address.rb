@@ -1,5 +1,4 @@
 class TransactionAddress
-
   include ActiveModel::Model
   attr_accessor :address_origin_id, :city, :address, :tel, :post_number, :build_number, :user_id, :item_id
 
@@ -14,5 +13,4 @@ class TransactionAddress
     Address.create(address_origin_id: address_origin_id, city: city, address: address, tel: tel, post_number: post_number, build_number: build_number)
     Transaction.create(user_id: user_id, item_id: item_id)
   end
-
 end

@@ -4,9 +4,7 @@ class TransactionsController < ApplicationController
   before_action :find_item, only: [:create, :index]
 
   def index
-    if @item.item_order != nil
-      redirect_to root_path
-    end
+    redirect_to root_path unless @item.item_order.nil?
   end
 
   def new
@@ -19,7 +17,7 @@ class TransactionsController < ApplicationController
       pay_item
       ItemOrder.create(item_id: params[:item_id])
       @transaction.save
-      return redirect_to root_path
+      redirect_to root_path
     else
       render 'index'
     end
@@ -36,28 +34,24 @@ class TransactionsController < ApplicationController
   end
 
   def move_to_index
-      redirect_to user_session_path unless user_signed_in? 
+    redirect_to user_session_path unless user_signed_in?
   end
 
   def move_to_index_a
     @item = Item.find(params[:item_id])
-    if @item.user_id == current_user.id
-      redirect_to root_path
-    end
+    redirect_to root_path if @item.user_id == current_user.id
   end
 
   def pay_item
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     Payjp::Charge.create(
       amount: @item.price,
       card: transaction_params[:token],
       currency: 'jpy'
-      )
+    )
   end
 
   def find_item
     @item = Item.find(params[:item_id])
   end
-
 end
-

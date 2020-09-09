@@ -39,55 +39,55 @@ describe User do
         user = FactoryBot.build(:user)
         user.nickname = ''
         user.valid?
-        expect(user.errors.full_messages).to include("ニックネームを入力してください")
+        expect(user.errors.full_messages).to include('ニックネームを入力してください')
       end
       it 'emailが空では登録できない' do
         user = FactoryBot.build(:user)
         user.email = ''
         user.valid?
-        expect(user.errors.full_messages).to include("メールアドレスを入力してください")
+        expect(user.errors.full_messages).to include('メールアドレスを入力してください')
       end
       it 'passwordが空では登録できない' do
         user = FactoryBot.build(:user)
         user.password = ''
         user.valid?
-        expect(user.errors.full_messages).to include("パスワードを入力してください")
+        expect(user.errors.full_messages).to include('パスワードを入力してください')
       end
       it 'birthdayが空では登録できない' do
         user = FactoryBot.build(:user)
         user.birthday = ''
         user.valid?
-        expect(user.errors.full_messages).to include("生年月日を入力してください")
+        expect(user.errors.full_messages).to include('生年月日を入力してください')
       end
       it 'firstnameが空では登録できない' do
         user = FactoryBot.build(:user)
         user.firstname = ''
         user.valid?
-        expect(user.errors.full_messages).to include("苗字を入力してください")
+        expect(user.errors.full_messages).to include('苗字を入力してください')
       end
       it 'firstname_kanaが空では登録できない' do
         user = FactoryBot.build(:user)
         user.firstname_kana = ''
         user.valid?
-        expect(user.errors.full_messages).to include("苗字カナを入力してください")
+        expect(user.errors.full_messages).to include('苗字カナを入力してください')
       end
       it 'lastnameが空では登録できない' do
         user = FactoryBot.build(:user)
         user.lastname = ''
         user.valid?
-        expect(user.errors.full_messages).to include("名前を入力してください")
+        expect(user.errors.full_messages).to include('名前を入力してください')
       end
       it 'lastname_kanaが空では登録できない' do
         user = FactoryBot.build(:user)
         user.lastname_kana = ''
         user.valid?
-        expect(user.errors.full_messages).to include("名前カナを入力してください")
+        expect(user.errors.full_messages).to include('名前カナを入力してください')
       end
       it 'passwordが存在してもpassword_confirmationが空では登録できない' do
         user = FactoryBot.build(:user)
         user.password_confirmation = ''
         user.valid?
-        expect(user.errors.full_messages).to include("確認用パスワードを入力してください")
+        expect(user.errors.full_messages).to include('確認用パスワードを入力してください')
       end
       it 'passwordが5文字以下であれば登録できないこと' do
         @user.password = '12345'

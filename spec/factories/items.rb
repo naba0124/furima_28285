@@ -9,6 +9,5 @@ FactoryBot.define do
     genre_id { 2 }
     price { 300 }
     association :user
-
   end
 end

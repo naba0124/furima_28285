@@ -40,6 +40,9 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user)
+    @comments = Comment.order('created_at ASC')
   end
 
   private

@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :items
   has_one :address
+  has_many :comments
 
   hankaku = /\A[a-z0-9]+\z/i
   zenkaku = /\A[ぁ-んァ-ン一-龥]/

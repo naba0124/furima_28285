@@ -42,7 +42,7 @@ class ItemsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @item.comments.includes(:user)
-    @comments = Comment.order('created_at ASC')
+    @comments = @comments.order('created_at ASC')
   end
 
   private

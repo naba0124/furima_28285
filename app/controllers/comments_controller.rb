@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   def create
     #binding.pry
+    @item = Item.find(params[:item_id])
     comment = Comment.create(comment_params)
     @comment = comment
     if @comment.save

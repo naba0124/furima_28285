@@ -227,3 +227,22 @@
 .inc {
   font-size: 13px;
 }
+
+.tag-content{
+
+}
+
+.input-tag{
+  width: 100%;
+  padding: 16px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+}
+
+.タグ {
+  font-weight: bold;
+  min-width: 170px;
+  margin-bottom: 10px;
+}

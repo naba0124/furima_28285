@@ -10,6 +10,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.integer :address_origin_id, null:false
       t.integer :burden_id,        null:false
       t.integer :delivery_time_id, null:false
+      t.string :message, null:false
 
       t.timestamps
     end

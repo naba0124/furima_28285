@@ -7,12 +7,15 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
+    #binding.pry
+    #@item = Item.new
+    @item = ItemTag.new
   end
 
   def create
-    @item = Item.new(item_params)
-    # binding.pry
+    #@item = Item.new(item_params)
+ 
+    @item = ItemTag.new(item_params)
     if @item.save
       redirect_to root_path
     else
@@ -45,10 +48,16 @@ class ItemsController < ApplicationController
     @comments = @comments.order('created_at ASC')
   end
 
+  def search
+    return nil if params[:input] == ""
+    tag = Tag.where(['name LIKE ?', "%#{params[:input]}%"] )
+    render json:{ keyword: tag }
+  end
+
   private
 
   def item_params
-    params.require(:item).permit(:name, :text, :status_id, :burden_id, :address_origin_id, :delivery_time_id, :genre_id, :price, images: []).merge(user_id: current_user.id)
+    params.require(:item_tag).permit(:name, :text, :status_id, :burden_id, :address_origin_id, :delivery_time_id, :genre_id, :price, images: []).merge(user_id: current_user.id)
   end
 
   def move_to_index

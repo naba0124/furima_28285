@@ -103,14 +103,14 @@
   
       <h4>コメント一覧</h4>
       <div class="comments" id="comments">
-      <% if @comments %>
-        <% @comments.reverse_each do |comment| %>
-          <p>
-            <%= comment.user.nickname %>: 
-            <%= comment.text %>
-          </p>
+        <% if @comments %>
+          <% @comments.reverse_each do |comment| %>
+            <p>
+              <%= comment.user.nickname %>: 
+              <%= comment.text %>
+            </p>
+          <% end %>
         <% end %>
-      <% end %>
       </div>
   </div>
 

@@ -44,8 +44,11 @@
       <%# ハッシュタグ %>
       <div class="tag-content">
         <div class="tag-field", id='tag-field'>
-          <%= f.label :name, class: "タグ" %>
-          <%= f.text_field :name, class:"input-tag" %>
+          <div class="tag-name">
+            <%= f.label :name, "タグ" %>
+            <span class="indispensable">必須</span>
+          </div>
+            <%= f.text_field :name, class:"input-tag", placeholder:"例）＃ギター" %>
         </div>
         <div class="tag-result", id="search-result">
         </div>

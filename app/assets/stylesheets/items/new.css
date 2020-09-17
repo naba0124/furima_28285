@@ -228,10 +228,6 @@
   font-size: 13px;
 }
 
-.tag-content{
-
-}
-
 .input-tag{
   width: 100%;
   padding: 16px 16px 8px;
@@ -241,8 +237,10 @@
   resize: none;
 }
 
-.タグ {
+.tag-field {
   font-weight: bold;
   min-width: 170px;
   margin-bottom: 10px;
 }
+
+
